@@ -1,5 +1,23 @@
 language: node_js
 node_js:
-  - 18
+  - "18"
+
+os:
+  - linux
+  - osx
+  - windows
+
+cache:
+  yarn: true
+  directories:
+    - node_modules
+
+install:
+  - yarn install
+
 script:
-  - npm install
+  - yarn test
+  - yarn compile
+
+notifications:
+  email: false
